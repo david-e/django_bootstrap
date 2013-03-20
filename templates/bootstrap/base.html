@@ -1,0 +1,46 @@
+{% load admin_static %}<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="{{ LANGUAGE_CODE|default:"en-us" }}" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="{{ LANGUAGE_CODE|default:"en-us" }}" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="{{ LANGUAGE_CODE|default:"en-us" }}" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="{{ LANGUAGE_CODE|default:"en-us" }}" class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>{{ SITE_TITLE }}</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+
+    {% block head %}
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
+
+    {% block style %}{% endblock %}
+    <script src="{% static "h5b/js/vendor/modernizr-2.6.2.min.js" %}"></script>
+    {% endblock %}
+</head>
+{% load i18n %}
+
+<body>
+    <!--[if lt IE 7]>
+        <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+    <![endif]-->
+    {% block body %}
+    <!-- container -->
+    {% block container %}
+    <!-- navbar -->
+    {% block navbar %}{% endblock %}
+    <!-- END navbar -->
+    <!-- header -->
+    {% block header %}{% endblock %}
+    <!-- END header -->
+    <!-- content -->
+    {% block content %}{% endblock %}
+    {% block footer %}<footer></footer>{% endblock %}
+    {% endblock %}<!-- END container -->
+    <!-- scripts -->
+    <script src="h5b/js/vendor/jquery-1.9.1.min.js"></script>
+    <script src="{% static "h5b/js/main.js" %}"></script>
+    {% block js %}{% endblock %}
+    <!-- END scripts -->
+    {% endblock %}
+</body>
+</html>
